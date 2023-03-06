@@ -1,0 +1,66 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #282d2d;
+  font: normal 400 130%/1.5 -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+}
+
+a {
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  -o-transition: opacity 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  transition: opacity 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+}
+
+a::after {
+  --scale: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 3px;
+  background: -webkit-linear-gradient(315deg, #73fac8, #00bee1);
+  background: -o-linear-gradient(315deg, #73fac8, #00bee1);
+  background: linear-gradient(135deg, #73fac8, #00bee1);
+  -webkit-transform: scaleX(var(--scale));
+      -ms-transform: scaleX(var(--scale));
+          transform: scaleX(var(--scale));
+  -webkit-transform-origin: var(--x) 50%;
+      -ms-transform-origin: var(--x) 50%;
+          transform-origin: var(--x) 50%;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1), -webkit-transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+}
+
+a:hover {
+  opacity: 1;
+}
+
+a:hover::after {
+  --scale: 1;
+}
